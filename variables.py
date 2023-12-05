@@ -9,6 +9,11 @@ FPS = 60
 DELAY = 0.05  # Adjust the delay for character printing speed
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
+GREY = (50, 50, 50)
+LIGHT_GREY = (100, 100, 100)
+LIGHTER_GREY = (150, 150, 150)
+LIGHTERER_GREY = (200, 200, 200)
+DARK_RED = (150, 0, 0)
 
 # Set up Pygame window
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -17,4 +22,3 @@ clock = pygame.time.Clock()
 
 # font
 FONT_SIZE = 70
-FONT_COLOR = (255, 255, 255)

@@ -2,7 +2,7 @@ import sys
 import pygame
 import variables as var
 
-def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var.DELAY):
+def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var.DELAY, font_color=var.FONT_COLOR):
     font = pygame.font.Font(None, font_size)
 
     x, y = 0, 0
@@ -14,7 +14,7 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
 
     # if the screen is light grey, write in black
     elif pixel_color == (200, 200, 200, 255):
-        text_surface = font.render("", True, var.BLACK)
+        text_surface = font.render("", True, font_color)
         text_rect = text_surface.get_rect(center=X_Y_Position)
 
     # this is for screen setup
@@ -50,7 +50,7 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
         font = pygame.font.Font(None, 200)
         text_rect.top = 230
         text_rect.left = 500
-    if text == "Oooooooh, your name is just ugly af.":
+    if text == "Oooooooh, your name is just ugly.":
         text_rect.top = 150
         text_rect.left = 170
     if text == "Well...":
@@ -59,15 +59,46 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
     if text == "Then what's your gender?":
         text_rect.top = 290
         text_rect.left = 280
-    if text == "So I can call you by that. (male, female, other)":
+    if text == "So I can name you. (male, female)":
         text_rect.top = 360
         text_rect.left = 80
-    if text == "Ah I see... your name is now Boy. Cherish it.":
+    if text == "Ah I see... your name is now Bob. Cherish it.":
         text_rect.top = 150
         text_rect.left = 80
-    if text == "Ah I see... your name is now Girl. Cherish it.":
+    if text == "Ah I see... your name is now Barbara. Cherish it.":
         text_rect.top = 150
         text_rect.left = 80
+    if text == "Well Bob,":
+        text_rect.top = 150
+        text_rect.left = 80
+    if text == "Well Bob,":
+        text_rect.top = 150
+        text_rect.left = 80
+    if text == "Well Bob,":
+        text_rect.top = 150
+        text_rect.left = 80
+    if text == "Well Bob,":
+        text_rect.top = 150
+        text_rect.left = 80
+    if text == "Well Bob,":
+        text_rect.top = 150
+        text_rect.left = 80
+    if text == "Well Bob,":
+        text_rect.top = 150
+        text_rect.left = 80
+    if text == "Well Bob,":
+        text_rect.top = 150
+        text_rect.left = 80
+    if text == "Well Bob,":
+        text_rect.top = 150
+        text_rect.left = 80
+    if text == "Well Bob,":
+        text_rect.top = 150
+        text_rect.left = 80
+    if text == "Well Bob,":
+        text_rect.top = 150
+        text_rect.left = 80
+
 
 
     char_index = 0
@@ -83,7 +114,7 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
 
         # if screen is grey, write in black
         elif pixel_color == (200, 200, 200, 255):
-            text_surface = font.render(current_text, True, var.BLACK)
+            text_surface = font.render(current_text, True, font_color)
             text_rect.size = text_surface.get_size()
             var.screen.blit(text_surface, text_rect)
 

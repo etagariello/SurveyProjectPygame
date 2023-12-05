@@ -22,3 +22,12 @@ clock = pygame.time.Clock()
 
 # font
 FONT_SIZE = 70
+FONT_COLOR = BLACK
+
+# lists
+# this list is of phrases if they don't know the person well
+no_knowledge_options = [">nothing", ">a little", ">little", ">little to nothing", ">somewhat", ">barely",
+                        ">barely anything"]
+
+# this list is if they do
+knowledge_options = [">a lot", ">everything", ">a good amount", ">a decent amount", ">decently"]

@@ -1,6 +1,5 @@
 import sys
 import pygame
-import slow_print as slow
 import variables as var
 
 def INPUT():
@@ -13,11 +12,11 @@ def INPUT():
 
     # if the screen is black, make the rectangle black
     if pixel_color == (0, 0, 0, 255):
-        pygame.draw.rect(var.screen, var.BLACK, (0, 450, 1200, 200))
+        pygame.draw.rect(var.screen, var.BLACK, (0, 470, 1200, 200))
 
     # if the screen is light grey, make the rectangle light gray
     elif pixel_color == (200, 200, 200, 255):
-        pygame.draw.rect(var.screen, var.LIGHTERER_GREY, (0, 450, 1200, 200))
+        pygame.draw.rect(var.screen, var.LIGHTERER_GREY, (0, 470, 1200, 200))
 
     running = True
     while running:
@@ -30,25 +29,9 @@ def INPUT():
                     if text != ">":
                         text = text[:-1]
                 elif event.key == pygame.K_RETURN:
-
-                    # ALL IF STATEMENTS DEPENDING ON WHAT THEY ENTER
-                    # quit if player types quit
-                    if text.lower() == ">quit":
-                        sys.exit()
-
-                    # if they type start, turn screen black
-                    elif text.lower() == ">start" and pixel_color == (0, 0, 0, 255):
-                        var.screen.fill(var.BLACK)
-                        return
-
-                    # if they type the wrong thing and the screen is black, say invalid (making it only happen in screen setup)
-                    elif text.lower() != ">quit" and text.lower() != ">start" and pixel_color == (0, 0, 0, 255):
-                        slow.SLOW_PRINT("Invalid Command. Try Again.")
-                        text = ">"
-
-                    else:
-                        print(text)
-                        return text
+                    var.all_responses.append(text)
+                    print(var.all_responses)
+                    return text
 
                 else:
                     text += event.unicode
@@ -56,11 +39,11 @@ def INPUT():
         # this is to clean up whatever is written when necessary
         # if the screen is black, make the rectangle black
         if pixel_color == (0, 0, 0, 255):
-            pygame.draw.rect(var.screen, var.BLACK, (0, 450, 1200, 200))
+            pygame.draw.rect(var.screen, var.BLACK, (0, 470, 1200, 200))
 
         # if the screen is light grey, make the rectangle light gray
         elif pixel_color == (200, 200, 200, 255):
-            pygame.draw.rect(var.screen, var.LIGHTERER_GREY, (0, 450, 1200, 200))
+            pygame.draw.rect(var.screen, var.LIGHTERER_GREY, (0, 470, 1200, 200))
 
         # Rendering text input box centered horizontally
         # if the screen is black, write the text in white
@@ -68,7 +51,7 @@ def INPUT():
             input_box = font.render(text, True, var.WHITE)
             input_box_rect = input_box.get_rect(center=(var.middle_X, 600))
             input_box_rect.left = 0
-            var.screen.blit(input_box, input_box_rect)\
+            var.screen.blit(input_box, input_box_rect)
 
         # if it's light grey, write the text in black
         elif pixel_color == (200, 200, 200, 255):

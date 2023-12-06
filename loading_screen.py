@@ -2,11 +2,10 @@ import sys
 import pygame
 import variables as var
 
-
-def LOADING(first=var.BLACK, second=var.GREY, third=var.LIGHT_GREY, fourth=var.LIGHTER_GREY, fifth=var.LIGHTERER_GREY):
+def LOADING(first=var.BLACK, second=var.GREY, third=var.LIGHT_GREY, fourth=var.LIGHTER_GREY, fifth=var.LIGHTERER_GREY, timer=0.5):
     color = first
-    timer = 0.5
     dt = 0
+    given_timer = timer
 
     running = True
     while running:
@@ -16,25 +15,25 @@ def LOADING(first=var.BLACK, second=var.GREY, third=var.LIGHT_GREY, fourth=var.L
             if event.type == pygame.QUIT:
                 sys.exit()
 
-        timer -= dt  # Decrement the timer by the delta time.
-        if timer <= 0:  # When the time is up ...
+        given_timer -= dt  # Decrement the timer by the delta time.
+        if given_timer <= 0:  # When the time is up ...
             # Swap the colors.
             if color == first:
                 var.screen.fill(color)
                 color = second
-                timer = 0.5
+                given_timer = timer
             elif color == second:
                 var.screen.fill(color)
                 color = third
-                timer = 0.5
+                given_timer = timer
             elif color == third:
                 var.screen.fill(color)
                 color = fourth
-                timer = 0.5
+                given_timer = timer
             elif color == fourth:
                 var.screen.fill(color)
                 color = fifth
-                timer = 0.5
+                given_timer = timer
             elif color == fifth:
                 var.screen.fill(color)
                 return

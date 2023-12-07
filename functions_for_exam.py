@@ -203,30 +203,32 @@ def enough_to_call_them_a_friend():
 def first_try_question1(name):
     load.LOADING()
     slow.SLOW_PRINT(f"Let's start simple, alright {name}?")
-    slow.SLOW_PRINT("(btw, for each question, the answers are only one word or number long; no need for spaces)")
     slow.SLOW_PRINT("Question 1")
     slow.SLOW_PRINT('What is "9 + 10"?')
+    slow.SLOW_PRINT("(btw, for each question, the answers are only one word or number long; no need for spaces)",
+                    font_size=35)
 
     response = inp.INPUT()
 
-    valid_answers = ["addition", "adding", "summation", "increment", "increase", "sum", "incrementing", "increasing"]
+    valid_answers = [">addition", ">adding", ">summation", ">increment", ">increase", ">sum", ">incrementing", ">increasing"]
 
     if response.lower() == ">19" or ">21":
         load.LOADING(var.LIGHTERER_GREY, var.LIGHTER_GREY, var.LIGHT_GREY, var.GREY, var.BLACK, 0.1)
         slow.SLOW_PRINT("You really thought it was going to be that easy, huh?",
+                        font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=65)
+        slow.SLOW_PRINT(f"I am truly disappointed in you {name}.", delay=var.DELAY_FOR_WARNINGS,
                         font_color=var.FONT_COLOR_FOR_WARNINGS)
-        slow.SLOW_PRINT(f"I am truly disappointed in you {name}.", font_color=var.DELAY_FOR_WARNINGS)
 
         slow.SLOW_PRINT("You know what? I won't give you a another chance...",
                         font_color=var.FONT_COLOR_FOR_WARNINGS)
         slow.SLOW_PRINT("I NEVER WILL", font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=200,
                         delay=var.DELAY_FOR_WARNINGS)
-        return
+        sys.exit()
 
     elif response.lower() in valid_answers:
         var.screen.fill(var.LIGHTERER_GREY)
         slow.SLOW_PRINT("Wow! Great Job!")
-        return
+        sys.exit()
 
     while response.lower() != ">19" and ">21" and response not in valid_answers:
         slow.SLOW_PRINT("Invalid Response. Try Again.", font_color=var.FONT_COLOR_FOR_WARNINGS,
@@ -236,17 +238,16 @@ def first_try_question1(name):
         if response.lower() == ">19" or ">21":
             load.LOADING(var.LIGHTERER_GREY, var.LIGHTER_GREY, var.LIGHT_GREY, var.GREY, var.BLACK, 0.1)
             slow.SLOW_PRINT("You really thought it was going to be that easy, huh?",
-                            font_color=var.FONT_COLOR_FOR_WARNINGS)
+                            font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=65)
             slow.SLOW_PRINT(f"I am truly disappointed in you {name}.", font_color=var.DELAY_FOR_WARNINGS)
 
             slow.SLOW_PRINT("You know what? I won't give you a another chance...",
                             font_color=var.FONT_COLOR_FOR_WARNINGS)
             slow.SLOW_PRINT("I NEVER WILL", font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=200,
                             delay=var.DELAY_FOR_WARNINGS)
-            return
+            sys.exit()
 
         elif response.lower() in valid_answers:
             var.screen.fill(var.LIGHTERER_GREY)
             slow.SLOW_PRINT("Wow! Great Job!")
-            return
-
+            sys.exit()

@@ -95,38 +95,38 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
 
     # first try question func
     if text == "Let's start simple, alright Bob?":
-        text_rect.top = 150
+        text_rect.top = 80
         text_rect.left = 230
     if text == "Let's start simple, alright Barbara?":
-        text_rect.top = 150
+        text_rect.top = 80
         text_rect.left = 230
-    if text == "Hello there! What's your name?":
+    if text == "(btw, for each question, the answers are only one word or number long; no need for spaces)":
+        text_rect.top = 290
+        text_rect.left = 0
+    if text == "Question 1":
         text_rect.top = 150
-        text_rect.left = 230
-    if text == "Hello there! What's your name?":
+        text_rect.left = 445
+    if text == 'What is "9 + 10"?':
+        text_rect.top = 220
+        text_rect.left = 350
+    if text == "You really thought it was going to be that easy, huh?":
         text_rect.top = 150
+        text_rect.left = 0
+    if text == "I am truly disappointed in you Bob.":
+        text_rect.top = 220
         text_rect.left = 230
-    if text == "Hello there! What's your name?":
+    if text == "I am truly disappointed in you Barbara.":
+        text_rect.top = 220
+        text_rect.left = 200
+    if text == "You know what? I won't give you a another chance...":
+        text_rect.top = 290
+        text_rect.left = 10
+    if text == "I NEVER WILL":
+        text_rect.top = 430
+        text_rect.left = 100
+    if text == "Wow! Great Job!":
         text_rect.top = 150
-        text_rect.left = 230
-    if text == "Hello there! What's your name?":
-        text_rect.top = 150
-        text_rect.left = 230
-    if text == "Hello there! What's your name?":
-        text_rect.top = 150
-        text_rect.left = 230
-    if text == "Hello there! What's your name?":
-        text_rect.top = 150
-        text_rect.left = 230
-    if text == "Hello there! What's your name?":
-        text_rect.top = 150
-        text_rect.left = 230
-    if text == "Hello there! What's your name?":
-        text_rect.top = 150
-        text_rect.left = 230
-    if text == "Hello there! What's your name?":
-        text_rect.top = 150
-        text_rect.left = 230
+        text_rect.left = 450
 
 
     # what makes the text go slow

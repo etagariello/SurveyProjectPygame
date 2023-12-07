@@ -10,6 +10,7 @@ def setup_screen():
     slow.SLOW_PRINT("- Welcome -", font_color=var.FONT_WHITE)
     slow.SLOW_PRINT("- Start -", font_color=var.FONT_WHITE, font_size=55)
     slow.SLOW_PRINT("- Quit -", font_color=var.FONT_WHITE, font_size=55)
+    slow.SLOW_PRINT("(type your command)", font_color=var.FONT_WHITE, font_size=55)
 
     command = inp.INPUT()
 
@@ -55,7 +56,7 @@ def name_interaction():
     var.screen.fill(var.LIGHTERER_GREY)
 
     # tell them why it's not working
-    slow.SLOW_PRINT("Oh... my test can't recognize that name...")
+    slow.SLOW_PRINT("Oh... my system can't recognize that name...")
     slow.SLOW_PRINT("Let me check it out.")
     slow.SLOW_PRINT(".....", delay=1, font_size=100)
 
@@ -97,11 +98,10 @@ def how_much_do_you_know_about_them(name):
     slow.SLOW_PRINT("How much do you know about who sent you this?")
     knowing = inp.INPUT()
 
-    # clear screen here
-    var.screen.fill(var.LIGHTERER_GREY)
 
     # if they say that they don't know enough about them, continue survey
     if knowing.lower() in var.no_knowledge_options:
+        var.screen.fill(var.LIGHTERER_GREY)
         slow.SLOW_PRINT("Oh how disappointing.")
 
         # darken screen for drama
@@ -111,11 +111,12 @@ def how_much_do_you_know_about_them(name):
         var.screen.fill(var.BLACK)
         slow.SLOW_PRINT("LET'S BEGIN :)", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS,
                         font_size=220)
-        sys.exit()
-
-    # if they do, question them if they consider them friends
-    elif knowing.lower() in var.knowledge_options:
         return
+
+        # if they do, question them if they consider them friends
+    elif knowing.lower() in var.knowledge_options:
+        return enough_to_call_them_a_friend()
+
 
     while knowing.lower() not in var.no_knowledge_options and knowing.lower() not in var.knowledge_options:
         slow.SLOW_PRINT("Invalid Response. Try Again.", font_color=var.FONT_COLOR_FOR_WARNINGS,
@@ -124,6 +125,7 @@ def how_much_do_you_know_about_them(name):
 
         # if they say that they don't know enough about them, continue survey
         if knowing.lower() in var.no_knowledge_options:
+            var.screen.fill(var.LIGHTERER_GREY)
             slow.SLOW_PRINT("Oh how disappointing.")
 
             # darken screen for drama
@@ -133,11 +135,11 @@ def how_much_do_you_know_about_them(name):
             var.screen.fill(var.BLACK)
             slow.SLOW_PRINT("LET'S BEGIN", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS,
                             font_size=250)
-            sys.exit()
+            return
 
         # if they do, question them if they consider them friends
         elif knowing.lower() in var.knowledge_options:
-            return
+            return enough_to_call_them_a_friend()
 
 def enough_to_call_them_a_friend():
     # darken screen for drama
@@ -153,9 +155,9 @@ def enough_to_call_them_a_friend():
         var.screen.fill(var.BLACK)
         slow.SLOW_PRINT("LET'S BEGIN :)", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS,
                         font_size=220)
-        sys.exit()
+        return
 
-    # if they say no, quit
+        # if they say no, quit
     elif friend.lower() == ">no":
         slow.SLOW_PRINT("I SEE WHY THEY SENT THIS TO YOU...", delay=var.DELAY_FOR_WARNINGS,
                         font_color=var.FONT_COLOR_FOR_WARNINGS,
@@ -166,22 +168,24 @@ def enough_to_call_them_a_friend():
         var.screen.fill(var.BLACK)
         slow.SLOW_PRINT("LET'S BEGIN :)", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS,
                         font_size=220)
-        sys.exit()
+        return
 
-    # if they say anything else, make them try again
+        # if they say anything else, make them try again
     while friend.lower() != ">yes" and friend.lower() != ">no":
         var.screen.fill(var.BLACK)
-        slow.SLOW_PRINT("YES OR NO", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=250)
+        slow.SLOW_PRINT("YES OR NO", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS,
+                        font_size=250)
         friend = inp.INPUT()
         var.screen.fill(var.BLACK)
 
         # if they say yes, continue the survey
         if friend.lower() == ">yes":
-            slow.SLOW_PRINT("GOOD", delay=var.DELAY_FOR_WARNINGS, font_size=250, font_color=var.FONT_COLOR_FOR_WARNINGS)
+            slow.SLOW_PRINT("GOOD", delay=var.DELAY_FOR_WARNINGS, font_size=250,
+                            font_color=var.FONT_COLOR_FOR_WARNINGS)
             var.screen.fill(var.BLACK)
             slow.SLOW_PRINT("LET'S BEGIN :)", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS,
                             font_size=220)
-            sys.exit()
+            return
 
         # if they say no
         elif friend == ">no":
@@ -194,4 +198,55 @@ def enough_to_call_them_a_friend():
             var.screen.fill(var.BLACK)
             slow.SLOW_PRINT("LET'S BEGIN :)", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS,
                             font_size=220)
-            sys.exit()
+            return
+
+def first_try_question1(name):
+    load.LOADING()
+    slow.SLOW_PRINT(f"Let's start simple, alright {name}?")
+    slow.SLOW_PRINT("(btw, for each question, the answers are only one word or number long; no need for spaces)")
+    slow.SLOW_PRINT("Question 1")
+    slow.SLOW_PRINT('What is "9 + 10"?')
+
+    response = inp.INPUT()
+
+    valid_answers = ["addition", "adding", "summation", "increment", "increase", "sum", "incrementing", "increasing"]
+
+    if response.lower() == ">19" or ">21":
+        load.LOADING(var.LIGHTERER_GREY, var.LIGHTER_GREY, var.LIGHT_GREY, var.GREY, var.BLACK, 0.1)
+        slow.SLOW_PRINT("You really thought it was going to be that easy, huh?",
+                        font_color=var.FONT_COLOR_FOR_WARNINGS)
+        slow.SLOW_PRINT(f"I am truly disappointed in you {name}.", font_color=var.DELAY_FOR_WARNINGS)
+
+        slow.SLOW_PRINT("You know what? I won't give you a another chance...",
+                        font_color=var.FONT_COLOR_FOR_WARNINGS)
+        slow.SLOW_PRINT("I NEVER WILL", font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=200,
+                        delay=var.DELAY_FOR_WARNINGS)
+        return
+
+    elif response.lower() in valid_answers:
+        var.screen.fill(var.LIGHTERER_GREY)
+        slow.SLOW_PRINT("Wow! Great Job!")
+        return
+
+    while response.lower() != ">19" and ">21" and response not in valid_answers:
+        slow.SLOW_PRINT("Invalid Response. Try Again.", font_color=var.FONT_COLOR_FOR_WARNINGS,
+                        font_size=var.FONT_SIZE_INVALIDS)
+        response = inp.INPUT()
+
+        if response.lower() == ">19" or ">21":
+            load.LOADING(var.LIGHTERER_GREY, var.LIGHTER_GREY, var.LIGHT_GREY, var.GREY, var.BLACK, 0.1)
+            slow.SLOW_PRINT("You really thought it was going to be that easy, huh?",
+                            font_color=var.FONT_COLOR_FOR_WARNINGS)
+            slow.SLOW_PRINT(f"I am truly disappointed in you {name}.", font_color=var.DELAY_FOR_WARNINGS)
+
+            slow.SLOW_PRINT("You know what? I won't give you a another chance...",
+                            font_color=var.FONT_COLOR_FOR_WARNINGS)
+            slow.SLOW_PRINT("I NEVER WILL", font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=200,
+                            delay=var.DELAY_FOR_WARNINGS)
+            return
+
+        elif response.lower() in valid_answers:
+            var.screen.fill(var.LIGHTERER_GREY)
+            slow.SLOW_PRINT("Wow! Great Job!")
+            return
+

@@ -19,19 +19,22 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
     if text == "- Quit -":
         text_rect.top = 250
         text_rect.left = 530
+    if text == "(type your command)":
+        text_rect.top = 350
+        text_rect.left = 410
 
     # if invalid command/response is given
     if text == "Invalid Command. Try Again." or text == "Invalid Response. Try Again.":
         text_rect.top = 500
         text_rect.left = 0
 
-    # normal sentence positioning
+    # for name func
     if text == "Hello there! What's your name?":
         text_rect.top = 150
         text_rect.left = 230
-    if text == "Oh... my test can't recognize that name...":
+    if text == "Oh... my system can't recognize that name...":
         text_rect.top = 150
-        text_rect.left = 80
+        text_rect.left = 65
     if text == "Let me check it out.":
         text_rect.top = 220
         text_rect.left = 350
@@ -45,6 +48,8 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
     if text == "Weeell":
         text_rect.top = 220
         text_rect.left = 500
+
+    # for gender func
     if text == "Then what's your gender?":
         text_rect.top = 290
         text_rect.left = 280
@@ -57,6 +62,8 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
     if text == "Ah I see... your name is now Barbara. Cherish it.":
         text_rect.top = 150
         text_rect.left = 30
+
+    # how much do you know func
     if text == "Well Bob":
         text_rect.top = 220
         text_rect.left = 500
@@ -71,6 +78,8 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
         text_rect.left = 345
     if text == "DO BETTER":
         text_rect.left = 200
+
+    # friend func
     if text == "ENOUGH TO CALL THEM A FRIEND?":
         text_rect.left = 20
     if text == "GOOD":
@@ -83,6 +92,41 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
         text_rect.left = 100
     if text == "LET'S BEGIN :)":
         text_rect.left = 60
+
+    # first try question func
+    if text == "Let's start simple, alright Bob?":
+        text_rect.top = 150
+        text_rect.left = 230
+    if text == "Let's start simple, alright Barbara?":
+        text_rect.top = 150
+        text_rect.left = 230
+    if text == "Hello there! What's your name?":
+        text_rect.top = 150
+        text_rect.left = 230
+    if text == "Hello there! What's your name?":
+        text_rect.top = 150
+        text_rect.left = 230
+    if text == "Hello there! What's your name?":
+        text_rect.top = 150
+        text_rect.left = 230
+    if text == "Hello there! What's your name?":
+        text_rect.top = 150
+        text_rect.left = 230
+    if text == "Hello there! What's your name?":
+        text_rect.top = 150
+        text_rect.left = 230
+    if text == "Hello there! What's your name?":
+        text_rect.top = 150
+        text_rect.left = 230
+    if text == "Hello there! What's your name?":
+        text_rect.top = 150
+        text_rect.left = 230
+    if text == "Hello there! What's your name?":
+        text_rect.top = 150
+        text_rect.left = 230
+    if text == "Hello there! What's your name?":
+        text_rect.top = 150
+        text_rect.left = 230
 
 
     # what makes the text go slow

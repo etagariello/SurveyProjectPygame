@@ -10,13 +10,14 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+    # starts setup
     func.setup_screen()
-    print("complete")
+
+    # puts result of gender function in name for future use
     name = func.gender_name_finding()
-    print("complete")
+
     func.how_much_do_you_know_about_them(name)
-    print("complete")
-    func.enough_to_call_them_a_friend()
-    print("complete")
+
+    func.first_try_question1(name)
 
 pygame.quit()

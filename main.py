@@ -1,5 +1,5 @@
 import pygame
-import functions_for_exam as func
+import functions_for_trial as func
 
 pygame.init()
 
@@ -10,14 +10,18 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # starts setup
+    # start
     func.setup_screen()
 
-    # puts result of gender function in name for future use
     name = func.gender_name_finding()
 
     func.how_much_do_you_know_about_them(name)
 
-    func.first_try_question1(name)
+    correct = func.first_try_question1(name)
+
+    if correct == False:
+        func.random_questions()
+
+
 
 pygame.quit()

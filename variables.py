@@ -38,3 +38,8 @@ no_knowledge_options = [">nothing", ">a little", ">little", ">little to nothing"
                         ">barely anything"]
 # this list is if they do
 knowledge_options = [">a lot", ">everything", ">a good amount", ">a decent amount", ">decently"]
+
+# list of valid responses
+valid_answers = [">addition", ">adding", ">summation", ">increment", ">increase", ">sum", ">incrementing",
+                 ">increasing"]
+

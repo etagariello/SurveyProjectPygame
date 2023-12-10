@@ -3,6 +3,7 @@ import input_box as inp
 import sys
 import loading_screen as load
 import variables as var
+import random
 
 
 def setup_screen():
@@ -203,16 +204,19 @@ def enough_to_call_them_a_friend():
 def first_try_question1(name):
     load.LOADING()
     slow.SLOW_PRINT(f"Let's start simple, alright {name}?")
-    slow.SLOW_PRINT("Question 1")
     slow.SLOW_PRINT('What is "9 + 10"?')
     slow.SLOW_PRINT("(btw, for each question, the answers are only one word or number long; no need for spaces)",
                     font_size=35)
 
     response = inp.INPUT()
+    if response.lower() in var.valid_answers:
+        var.screen.fill(var.LIGHTERER_GREY)
+        slow.SLOW_PRINT("Oh... Correct ig")
+        correct = True
+        return correct
 
-    valid_answers = [">addition", ">adding", ">summation", ">increment", ">increase", ">sum", ">incrementing", ">increasing"]
 
-    if response.lower() == ">19" or ">21":
+    elif response.lower() == ">19" or response.lower() == ">21":
         load.LOADING(var.LIGHTERER_GREY, var.LIGHTER_GREY, var.LIGHT_GREY, var.GREY, var.BLACK, 0.1)
         slow.SLOW_PRINT("You really thought it was going to be that easy, huh?",
                         font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=65)
@@ -223,19 +227,23 @@ def first_try_question1(name):
                         font_color=var.FONT_COLOR_FOR_WARNINGS)
         slow.SLOW_PRINT("I NEVER WILL", font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=200,
                         delay=var.DELAY_FOR_WARNINGS)
-        sys.exit()
 
-    elif response.lower() in valid_answers:
-        var.screen.fill(var.LIGHTERER_GREY)
-        slow.SLOW_PRINT("Wow! Great Job!")
-        sys.exit()
+        var.screen.fill(var.BLACK)
+        correct = False
+        return correct
 
-    while response.lower() != ">19" and ">21" and response not in valid_answers:
+    while response.lower() != ">19" and response.lower() != ">21" and response.lower() not in var.valid_answers:
         slow.SLOW_PRINT("Invalid Response. Try Again.", font_color=var.FONT_COLOR_FOR_WARNINGS,
                         font_size=var.FONT_SIZE_INVALIDS)
         response = inp.INPUT()
 
-        if response.lower() == ">19" or ">21":
+        if response.lower() in var.valid_answers:
+            var.screen.fill(var.LIGHTERER_GREY)
+            slow.SLOW_PRINT("Oh... Correct ig")
+            correct = True
+            return correct
+
+        elif response.lower() == ">19" or response.lower() == ">21":
             load.LOADING(var.LIGHTERER_GREY, var.LIGHTER_GREY, var.LIGHT_GREY, var.GREY, var.BLACK, 0.1)
             slow.SLOW_PRINT("You really thought it was going to be that easy, huh?",
                             font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=65)
@@ -245,9 +253,137 @@ def first_try_question1(name):
                             font_color=var.FONT_COLOR_FOR_WARNINGS)
             slow.SLOW_PRINT("I NEVER WILL", font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=200,
                             delay=var.DELAY_FOR_WARNINGS)
+
+            var.screen.fill(var.BLACK)
+            correct = False
+            return correct
+
+# lets the player know that they failed and they can try again if they want
+def restart_message():
+    slow.SLOW_PRINT("How truly unfortunate...", font_color=var.FONT_COLOR_FOR_WARNINGS)
+    slow.SLOW_PRINT("You got that one wrong.", font_color=var.FONT_COLOR_FOR_WARNINGS)
+    slow.SLOW_PRINT("But don't worry!", font_color=var.FONT_COLOR_FOR_WARNINGS)
+    slow.SLOW_PRINT("You definitely don't have to restart...", font_color=var.FONT_COLOR_FOR_WARNINGS)
+    slow.SLOW_PRINT("And the questions are definitely not randomized...", font_color=var.FONT_COLOR_FOR_WARNINGS)
+
+    var.screen.fill(var.BLACK)
+    slow.SLOW_PRINT("Try Again?", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS,
+                        font_size=250)
+    response = inp.INPUT()
+
+    if response.lower() == ">yes":
+        return random_questions()
+
+    elif response.lower() == ">no":
+        sys.exit()
+
+    while response.lower() != ">yes" and response.lower() != ">no":
+        slow.SLOW_PRINT("Invalid Response. Try Again.", font_color=var.FONT_COLOR_FOR_WARNINGS,
+                        font_size=var.FONT_SIZE_INVALIDS)
+        response = inp.INPUT()
+
+        if response.lower() == ">yes":
+            return random_questions()
+
+        elif response.lower() == ">no":
             sys.exit()
 
-        elif response.lower() in valid_answers:
-            var.screen.fill(var.LIGHTERER_GREY)
-            slow.SLOW_PRINT("Wow! Great Job!")
-            sys.exit()
+# using random module so that it picks a random question and removes it after so that it doesn't repeat
+def random_questions():
+    # coffin question
+    def rand_question_1():
+        slow.SLOW_PRINT("You buy it when you don’t need it,", font_color=var.FONT_WHITE )
+        slow.SLOW_PRINT("you need it when you can’t buy it,", font_color=var.FONT_WHITE)
+        slow.SLOW_PRINT("you use it when you don’t know it.", font_color=var.FONT_WHITE)
+
+        slow.SLOW_PRINT("What is it?", font_color=var.FONT_WHITE)
+        response = inp.INPUT()
+
+        correct_response = [">a coffin", ">coffin"]
+
+        if response.lower() in correct_response:
+            slow.SLOW_PRINT("Correct...", font_color=var.FONT_WHITE)
+            return
+
+        elif response.lower() not in correct_response:
+            return restart_message()
+
+    # nothing question
+    def rand_question_2():
+        slow.SLOW_PRINT("The rich need it,", font_color=var.FONT_WHITE)
+        slow.SLOW_PRINT("the poor have it,", font_color=var.FONT_WHITE)
+        slow.SLOW_PRINT("and if you breathe it you die.", font_color=var.FONT_WHITE)
+
+        slow.SLOW_PRINT("What is it?", font_color=var.FONT_WHITE)
+        response = inp.INPUT()
+
+        correct_response = [">nothing"]
+
+        if response.lower() in correct_response:
+            slow.SLOW_PRINT("Correct...", font_color=var.FONT_WHITE)
+            return
+
+        elif response.lower() not in correct_response:
+            return restart_message()
+
+    #mortality question
+    def rand_question_3():
+        slow.SLOW_PRINT("I am the inevitable shadow", font_color=var.FONT_WHITE)
+        slow.SLOW_PRINT("cast by the passage of time.", font_color=var.FONT_WHITE)
+
+        slow.SLOW_PRINT("What am I?", font_color=var.FONT_WHITE)
+        response = inp.INPUT()
+
+        correct_response = [">mortality"]
+
+        if response.lower() in correct_response:
+            slow.SLOW_PRINT("Correct...", font_color=var.FONT_WHITE)
+            return
+
+        elif response.lower() not in correct_response:
+            return restart_message()
+
+    # oblivion question
+    def rand_question_4():
+        slow.SLOW_PRINT("What is the ultimate fate,", font_color=var.FONT_WHITE)
+        slow.SLOW_PRINT("unseen yet known to all?", font_color=var.FONT_WHITE)
+
+        response = inp.INPUT()
+
+        correct_response = [">oblivion"]
+
+        if response.lower() in correct_response:
+            slow.SLOW_PRINT("Correct...", font_color=var.FONT_WHITE)
+            return
+
+        elif response.lower() not in correct_response:
+            return restart_message()
+
+        # Void question
+    def rand_question_5():
+        slow.SLOW_PRINT("I am the absence", font_color=var.FONT_WHITE)
+        slow.SLOW_PRINT("that defines existence's end.", font_color=var.FONT_WHITE)
+
+        slow.SLOW_PRINT("What am I?", font_color=var.FONT_WHITE)
+        response = inp.INPUT()
+
+        correct_response = [">void", ">the void"]
+
+        if response.lower() in correct_response:
+            slow.SLOW_PRINT("Correct...", font_color=var.FONT_WHITE)
+            return
+
+        elif response.lower() not in correct_response:
+            return restart_message()
+
+
+    random_questions_list = [rand_question_1(), rand_question_2(), rand_question_3(), rand_question_4(),
+                             rand_question_5()]
+    num_queue = 0
+    # this pulls a random question from the list and also removes it so it can't repeat
+    for i in range(5):
+        num_queue += 1
+        var.screen.fill(var.BLACK)
+        slow.SLOW_PRINT(f"Question {num_queue}")
+        next_question = random.choice(random_questions_list)
+        random_questions_list.remove(next_question)

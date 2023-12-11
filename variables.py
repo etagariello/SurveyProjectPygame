@@ -30,9 +30,6 @@ FONT_WHITE = WHITE
 DELAY = 0.05  # Adjust the delay for character printing speed
 DELAY_FOR_WARNINGS = 0.075
 
-# list of all responses
-all_responses = []
-
 # this list is of phrases if they don't know the person well
 no_knowledge_options = [">nothing", ">a little", ">little", ">little to nothing", ">somewhat", ">barely",
                         ">barely anything"]

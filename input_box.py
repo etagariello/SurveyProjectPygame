@@ -12,11 +12,11 @@ def INPUT():
 
     # if the screen is black, make the rectangle black
     if pixel_color == (0, 0, 0, 255):
-        pygame.draw.rect(var.screen, var.BLACK, (0, 470, 1200, 200))
+        pygame.draw.rect(var.screen, var.BLACK, (0, 490, 1200, 200))
 
     # if the screen is light grey, make the rectangle light gray
     elif pixel_color == (200, 200, 200, 255):
-        pygame.draw.rect(var.screen, var.LIGHTERER_GREY, (0, 470, 1200, 200))
+        pygame.draw.rect(var.screen, var.LIGHTERER_GREY, (0, 490, 1200, 200))
 
     running = True
     while running:
@@ -29,8 +29,6 @@ def INPUT():
                     if text != ">":
                         text = text[:-1]
                 elif event.key == pygame.K_RETURN:
-                    var.all_responses.append(text)
-                    print(var.all_responses)
                     return text
 
                 else:
@@ -39,11 +37,11 @@ def INPUT():
         # this is to clean up whatever is written when necessary
         # if the screen is black, make the rectangle black
         if pixel_color == (0, 0, 0, 255):
-            pygame.draw.rect(var.screen, var.BLACK, (0, 470, 1200, 200))
+            pygame.draw.rect(var.screen, var.BLACK, (0, 490, 1200, 200))
 
         # if the screen is light grey, make the rectangle light gray
         elif pixel_color == (200, 200, 200, 255):
-            pygame.draw.rect(var.screen, var.LIGHTERER_GREY, (0, 470, 1200, 200))
+            pygame.draw.rect(var.screen, var.LIGHTERER_GREY, (0, 490, 1200, 200))
 
         # Rendering text input box centered horizontally
         # if the screen is black, write the text in white

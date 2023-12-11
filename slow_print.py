@@ -99,7 +99,7 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
         text_rect.left = 230
     if text == "Let's start simple, alright Barbara?":
         text_rect.top = 80
-        text_rect.left = 230
+        text_rect.left = 170
     if text == "(btw, for each question, the answers are only one word or number long; no need for spaces)":
         text_rect.top = 220
         text_rect.left = 50
@@ -108,19 +108,19 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
         text_rect.left = 370
     if text == "You really thought it was going to be that easy, huh?":
         text_rect.top = 150
-        text_rect.left = 0
+        text_rect.left = 30
     if text == "I am truly disappointed in you Bob.":
         text_rect.top = 220
         text_rect.left = 230
     if text == "I am truly disappointed in you Barbara.":
         text_rect.top = 220
-        text_rect.left = 200
-    if text == "You know what? I won't give you a another chance...":
+        text_rect.left = 170
+    if text == "You know what? I won't give you another chance...":
         text_rect.top = 290
         text_rect.left = 5
     if text == "I NEVER WILL":
-        text_rect.top = 430
-        text_rect.left = 100
+        text_rect.top = 400
+        text_rect.left = 120
     if text == "Oh... Correct ig":
         text_rect.top = 150
         text_rect.left = 450
@@ -139,17 +139,16 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
         text_rect.top = 360
         text_rect.left = 450
     if text == "Correct...":
-        text_rect.top = 150
-        text_rect.left = 450
+        text_rect.left = 300
     if text == "The rich need it,":
         text_rect.top = 150
-        text_rect.left = 350
+        text_rect.left = 380
     if text == "the poor have it,":
         text_rect.top = 220
-        text_rect.left = 350
+        text_rect.left = 380
     if text == "and if you breathe it you die.":
         text_rect.top = 290
-        text_rect.left = 230
+        text_rect.left = 240
     if text == "I am the inevitable shadow":
         text_rect.top = 150
         text_rect.left = 280
@@ -161,49 +160,49 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
         text_rect.left = 450
     if text == "What is the ultimate fate,":
         text_rect.top = 150
-        text_rect.left = 260
+        text_rect.left = 280
     if text == "unseen yet known to all?":
         text_rect.top = 220
-        text_rect.left = 240
+        text_rect.left = 280
     if text == "I am the absence":
         text_rect.top = 150
-        text_rect.left = 350
+        text_rect.left = 365
     if text == "that defines existence's end.":
         text_rect.top = 220
-        text_rect.left = 230
+        text_rect.left = 250
     if text == "How truly unfortunate...":
         text_rect.top = 150
-        text_rect.left = 240
+        text_rect.left = 310
     if text == "You got that one wrong.":
         text_rect.top = 220
-        text_rect.left = 280
+        text_rect.left = 310
     if text == "But don't worry!":
         text_rect.top = 290
-        text_rect.left = 350
+        text_rect.left = 380
     if text == "You definitely don't have to restart...":
         text_rect.top = 360
         text_rect.left = 200
     if text == "And the questions are definitely not randomized...":
         text_rect.top = 430
-        text_rect.left = 10
+        text_rect.left = 15
     if text == "Try Again?":
-        text_rect.left = 100
+        text_rect.left = 150
 
-    # questiong positioning
+    # questions positioning
     if text == "Question 1":
-        text_rect.top = 100
+        text_rect.top = 60
         text_rect.left = 450
     if text == "Question 2":
-        text_rect.top = 100
+        text_rect.top = 60
         text_rect.left = 450
     if text == "Question 3":
-        text_rect.top = 100
+        text_rect.top = 60
         text_rect.left = 450
     if text == "Question 4":
-        text_rect.top = 100
+        text_rect.top = 60
         text_rect.left = 450
     if text == "Question 5":
-        text_rect.top = 100
+        text_rect.top = 60
         text_rect.left = 450
 
     # what makes the text go slow

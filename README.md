@@ -29,7 +29,7 @@ The secret meaning to this project is supposed to represent my commitment to thi
 
 The **"Good Ending?"** is meant to represent how after many fails you eventually succeeded at the problem you were facing, and moved on with life.
 
-The **"Better Ending?"** is meant to represent how after completing your probelm immediately and flawlessly, you decided to stay and do it forever, which we can compare it to video game addictions (since its usually caused by immaculate skill) or workaholics. And the reason why it says "...Alone?" is because the person that we are talking to is actually meant to be your consciousness pushing you to improve, but if you have already achieved max skill, then you are simply alone.
+The **"Better Ending?"** is meant to represent how after completing your problem immediately and flawlessly, you decided to stay and do it forever, which we can compare it to video game addictions (since its usually caused by immaculate skill) or workaholics. And the reason why it says "...Alone?" is because the person that we are talking to is actually meant to be your consciousness pushing you to improve, but if you have already achieved max skill, then you are simply alone.
 
 **USAGE**
 

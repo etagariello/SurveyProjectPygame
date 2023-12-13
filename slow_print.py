@@ -111,7 +111,7 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
         text_rect.left = 30
     if text == "I am truly disappointed in you Bob.":
         text_rect.top = 220
-        text_rect.left = 230
+        text_rect.left = 220
     if text == "I am truly disappointed in you Barbara.":
         text_rect.top = 220
         text_rect.left = 170
@@ -128,13 +128,13 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
     #random questions positioning
     if text == "You buy it when you don’t need it,":
         text_rect.top = 150
-        text_rect.left = 230
+        text_rect.left = 220
     if text == "you need it when you can’t buy it,":
         text_rect.top = 220
-        text_rect.left = 230
+        text_rect.left = 220
     if text == "you use it when you don’t know it.":
         text_rect.top = 290
-        text_rect.left = 230
+        text_rect.left = 220
     if text == "What is it?":
         text_rect.top = 360
         text_rect.left = 450
@@ -142,10 +142,10 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
         text_rect.left = 300
     if text == "The rich need it,":
         text_rect.top = 150
-        text_rect.left = 380
+        text_rect.left = 390
     if text == "the poor have it,":
         text_rect.top = 220
-        text_rect.left = 380
+        text_rect.left = 390
     if text == "and if you breathe it you die.":
         text_rect.top = 290
         text_rect.left = 240
@@ -160,16 +160,16 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
         text_rect.left = 450
     if text == "What is the ultimate fate,":
         text_rect.top = 150
-        text_rect.left = 280
+        text_rect.left = 290
     if text == "unseen yet known to all?":
         text_rect.top = 220
-        text_rect.left = 280
+        text_rect.left = 290
     if text == "I am the absence":
         text_rect.top = 150
-        text_rect.left = 365
+        text_rect.left = 380
     if text == "that defines existence's end.":
         text_rect.top = 220
-        text_rect.left = 250
+        text_rect.left = 255
     if text == "How truly unfortunate...":
         text_rect.top = 150
         text_rect.left = 310
@@ -204,6 +204,72 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
     if text == "Question 5":
         text_rect.top = 60
         text_rect.left = 450
+
+    # escape ending positioning
+    if text == "Leaving already, huh?":
+        text_rect.top = 150
+        text_rect.left = 345
+    if text == "Well... I'm proud of you...":
+        text_rect.top = 220
+        text_rect.left = 280
+    if text == "And don't forget me...":
+        text_rect.top = 290
+        text_rect.left = 345
+    if text == "You then went on your way, leaving them behind...":
+        text_rect.top = 290
+        text_rect.left = 15
+    if text == "Good Ending?":
+        text_rect.left = 110
+
+    # master ending positioning
+    if text == "You completed them all...":
+        text_rect.top = 150
+        text_rect.left = 310
+    if text == "Without fail???":
+        text_rect.top = 220
+        text_rect.left = 400
+    if text == "Who are you...?":
+        text_rect.top = 290
+        text_rect.left = 400
+    if text == "What are you...?":
+        text_rect.top = 360
+        text_rect.left = 400
+    if text == "Please...":
+        text_rect.top = 430
+        text_rect.left = 480
+    if text == "TEACH ME YOUR WAYS.":
+        text_rect.top = 500
+        text_rect.left = 20
+    if text == 'You decided to stay in here...':
+        text_rect.top = 150
+        text_rect.left = 250
+    if text == "...Alone?":
+        text_rect.left = 300
+    if text == "Better Ending?":
+        text_rect.left = 80
+
+    # credits positioning
+    if text == "Credits":
+        text_rect.top = 20
+        text_rect.left = 410
+    if text == "Created by Elias Tagariello":
+        text_rect.top = 100
+        text_rect.left = 200
+    if text == "Special thanks to:":
+        text_rect.top = 170
+        text_rect.left = 370
+    if text == "Caleb Rice and Stone Beier for providing me with riddles and ideas.":
+        text_rect.top = 340
+        text_rect.left = 10
+    if text == "Gil Salu for giving the best python class ever.":
+        text_rect.top = 410
+        text_rect.left = 10
+    if text == "My girlfriend for giving me enough confidence to complete this.":
+        text_rect.top = 270
+        text_rect.left = 10
+    if text == "Thanks for playing!":
+        text_rect.top = 550
+        text_rect.left = 70
 
     # what makes the text go slow
     char_index = 0

@@ -5,7 +5,6 @@ import loading_screen as load
 import variables as var
 import random
 
-
 def setup_screen():
     # START SCREEN
     slow.SLOW_PRINT("- Welcome -", font_color=var.FONT_WHITE)
@@ -134,8 +133,8 @@ def how_much_do_you_know_about_them(name):
             slow.SLOW_PRINT("DO BETTER", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS,
                             font_size=200)
             var.screen.fill(var.BLACK)
-            slow.SLOW_PRINT("LET'S BEGIN", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS,
-                            font_size=250)
+            slow.SLOW_PRINT("LET'S BEGIN :)", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS,
+                            font_size=220)
             return
 
         # if they do, question them if they consider them friends
@@ -251,7 +250,7 @@ def first_try_questions(name):
             slow.SLOW_PRINT(f"I am truly disappointed in you {name}.", delay=var.DELAY_FOR_WARNINGS,
                             font_color=var.FONT_COLOR_FOR_WARNINGS)
 
-            slow.SLOW_PRINT("You know what? I won't give you a another chance...",
+            slow.SLOW_PRINT("You know what? I won't give you another chance...",
                             font_color=var.FONT_COLOR_FOR_WARNINGS)
             slow.SLOW_PRINT("I NEVER WILL", font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=200,
                             delay=var.DELAY_FOR_WARNINGS)
@@ -312,6 +311,7 @@ def random_questions(background=var.BLACK, font_color=var.FONT_WHITE):
 
         if response.lower() in correct_response:
             slow.SLOW_PRINT("Correct...", font_color=font_color, font_size=200)
+            var.screen.fill(background)
             return
 
         elif response.lower() not in correct_response:
@@ -331,6 +331,7 @@ def random_questions(background=var.BLACK, font_color=var.FONT_WHITE):
 
         if response.lower() in correct_response:
             slow.SLOW_PRINT("Correct...", font_color=font_color, font_size=200)
+            var.screen.fill(background)
             return
 
         elif response.lower() not in correct_response:
@@ -349,6 +350,7 @@ def random_questions(background=var.BLACK, font_color=var.FONT_WHITE):
 
         if response.lower() in correct_response:
             slow.SLOW_PRINT("Correct...", font_color=font_color, font_size=200)
+            var.screen.fill(background)
             return
 
         elif response.lower() not in correct_response:
@@ -366,6 +368,7 @@ def random_questions(background=var.BLACK, font_color=var.FONT_WHITE):
 
         if response.lower() in correct_response:
             slow.SLOW_PRINT("Correct...", font_color=font_color, font_size=200)
+            var.screen.fill(background)
             return
 
         elif response.lower() not in correct_response:
@@ -386,6 +389,7 @@ def random_questions(background=var.BLACK, font_color=var.FONT_WHITE):
 
         if response.lower() in correct_response:
             slow.SLOW_PRINT("Correct...", font_color=font_color, font_size=200)
+            var.screen.fill(background)
             return
 
         elif response.lower() not in correct_response:
@@ -413,3 +417,50 @@ def random_questions(background=var.BLACK, font_color=var.FONT_WHITE):
             rand_question_5()
 
         random_questions_list.remove(next_question)
+
+def escape_ending():
+    slow.SLOW_PRINT("Leaving already, huh?", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS)
+    slow.SLOW_PRINT("Well... I'm proud of you...", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS)
+    slow.SLOW_PRINT("And don't forget me...", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_COLOR_FOR_WARNINGS)
+
+    load.LOADING()
+
+    slow.SLOW_PRINT("You then went on your way, leaving them behind...", delay=var.DELAY_FOR_WARNINGS)
+
+    var.screen.fill(var.LIGHTERER_GREY)
+
+    slow.SLOW_PRINT("Good Ending?", delay=0.5, font_size=200)
+
+    credits()
+
+def master_ending():
+    slow.SLOW_PRINT("You completed them all...", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_BLACK)
+    slow.SLOW_PRINT("Without fail???", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_BLACK)
+    slow.SLOW_PRINT("Who are you...?", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_BLACK)
+    slow.SLOW_PRINT("What are you...?", delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_BLACK)
+    slow.SLOW_PRINT("Please...", delay=0.5, font_color=var.FONT_BLACK)
+    slow.SLOW_PRINT("TEACH ME YOUR WAYS.", delay=0.5, font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=150)
+
+    load.LOADING(var.LIGHTERER_GREY, var.LIGHTER_GREY, var.LIGHT_GREY, var.GREY, var.BLACK, 0.1)
+
+    slow.SLOW_PRINT('You decided to stay in here...', delay=var.DELAY_FOR_WARNINGS, font_color=var.FONT_WHITE)
+    slow.SLOW_PRINT("...Alone?",delay=0.5, font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=200)
+
+    var.screen.fill(var.BLACK)
+    slow.SLOW_PRINT("Better Ending?", delay=0.5, font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=200)
+
+    credits()
+
+def credits():
+    var.screen.fill(var.BLACK)
+
+    slow.SLOW_PRINT("Credits", font_color=var.FONT_WHITE, font_size=120)
+    slow.SLOW_PRINT("Created by Elias Tagariello", font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=90)
+    slow.SLOW_PRINT("Special thanks to:", font_color=var.FONT_WHITE)
+    slow.SLOW_PRINT("My girlfriend for giving me enough confidence to complete this.", font_color=var.FONT_WHITE, font_size=50)
+    slow.SLOW_PRINT("Caleb Rice and Stone Beier for providing me with riddles and ideas.", font_color=var.FONT_WHITE, font_size=50)
+    slow.SLOW_PRINT("Gil Salu for giving the best python class ever.", font_color=var.FONT_WHITE, font_size=50)
+
+    slow.SLOW_PRINT("Thanks for playing!", font_color=var.FONT_WHITE, delay=0.5, font_size=160)
+
+    sys.exit()

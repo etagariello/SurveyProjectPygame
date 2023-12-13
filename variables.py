@@ -18,7 +18,7 @@ DARK_RED = (150, 0, 0)
 
 # Set up Pygame window
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Frustration: The Test")
+pygame.display.set_caption("Tilt Trials")
 clock = pygame.time.Clock()
 
 # font

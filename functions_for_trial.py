@@ -457,7 +457,7 @@ def credits():
     slow.SLOW_PRINT("Credits", font_color=var.FONT_WHITE, font_size=120)
     slow.SLOW_PRINT("Created by Elias Tagariello", font_color=var.FONT_COLOR_FOR_WARNINGS, font_size=90)
     slow.SLOW_PRINT("Special thanks to:", font_color=var.FONT_WHITE)
-    slow.SLOW_PRINT("My girlfriend for giving me enough confidence to complete this.", font_color=var.FONT_WHITE, font_size=50)
+    slow.SLOW_PRINT("My girlfriend, Davi, for giving me enough confidence to complete this.", font_color=var.FONT_WHITE, font_size=50)
     slow.SLOW_PRINT("Caleb Rice and Stone Beier for providing me with riddles and ideas.", font_color=var.FONT_WHITE, font_size=50)
     slow.SLOW_PRINT("Gil Salu for giving the best python class ever.", font_color=var.FONT_WHITE, font_size=50)
 

@@ -239,7 +239,7 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
         text_rect.left = 480
     if text == "TEACH ME YOUR WAYS.":
         text_rect.top = 500
-        text_rect.left = 20
+        text_rect.left = 0
     if text == 'You decided to stay in here...':
         text_rect.top = 150
         text_rect.left = 250
@@ -264,7 +264,7 @@ def SLOW_PRINT(text, X_Y_Position=var.middle, font_size=var.FONT_SIZE, delay=var
     if text == "Gil Salu for giving the best python class ever.":
         text_rect.top = 410
         text_rect.left = 10
-    if text == "My girlfriend for giving me enough confidence to complete this.":
+    if text == "My girlfriend, Davi, for giving me enough confidence to complete this.":
         text_rect.top = 270
         text_rect.left = 10
     if text == "Thanks for playing!":
